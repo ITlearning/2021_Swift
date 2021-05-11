@@ -10,7 +10,6 @@ import Swift
 */
 
 // MARK: - Array
-
 // 빈 Int Array 생성
 var integers: Array<Int> = Array<Int>() // 빈 Array 생성
 integers.append(1)
@@ -21,7 +20,6 @@ print(integers)
 // 가지고 있는지 확인하는 함수
 print(integers.contains(100)) // ture
 print(integers.contains(99))  // false
-
 // 지우는 함수
 integers.remove(at:0)
 integers.removeLast()
@@ -29,9 +27,7 @@ integers.removeAll()
 
 // 비어있는 상태에서 호출하면 에러
 //intgers[0]
-
 // 다양한 생성 방법
-
 // Array<Double>와 [Double]는 동일한 표현
 // 빈 Double Array 생성
 var doubles: Array<Double> = [Double]()
@@ -48,9 +44,7 @@ let immutableArray = [1,2,3]
 
 // immutableArray.append(4)
 // immutableArray.removeAll()
-
 // MARK: - Dictionary
-
 //Key가 String 타입이고 Value가 Any인 빈 Dictionary 생성
 var anyDictionary: Dictionary<String, Any> = [String: Any]()
 anyDictionary["someKey"] = "Value"
@@ -74,9 +68,7 @@ let initalizedDictionary: [String: String] = ["name": "ITlearning", "gender": "m
 // 상수에 넣지도 못함 불확실성 때문에 오류가 난다.
 // let someValue: String = initalizedDictionary["name"]
 
-
 // MARK: - Set
-
 // 빈 Int Set 생성
 var integerSet: Set<Int> = Set<Int> ()
 
@@ -87,3 +79,31 @@ integerSet.insert(99)
 integerSet.insert(99)
 // 이래도 같은 값은 한번만 추가 된다.
 
+print(integerSet)
+print(integerSet.contains(1))
+print(integerSet.contains(2))
+
+integerSet.remove(100)
+integerSet.removeFirst()
+
+print(integerSet.count)
+// 2. Set의 활용
+// 멤버의 유일성이 보장되기 때문에 집합 연산에 활용하면 유용합니다.
+let setA: Set<Int> = [1,2,3,4,5]
+let setB: Set<Int> = [3,4,5,6,7]
+
+// 합집합
+let union: Set<Int> = setA.union(setB)
+print(union)
+
+// 합집합 오름차순 정렬
+let sortedUnion: [Int] = union.sorted()
+print(sortedUnion)
+
+// 교집합
+let intersection: Set<Int> = setA.intersection(setB)
+print(intersection)
+
+// 차집합
+let subtracting: Set<Int> = setA.subtracting(setB)
+print(subtracting)
