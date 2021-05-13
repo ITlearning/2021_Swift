@@ -3,13 +3,11 @@
 import Swift
 
 // MARK: - 함수의 선언
-
 // MARK: 함수선언의 기본형태
 //func  함수이름(매개변수1이름: 매개변수1타입, 매개변수2이름: 매개변수2타입 ...) -> 반환타입 {
 //    함수 구현부
 // return 반환값
 //}
-
 
 // 함수선언의 기본형태
 // 예)
@@ -34,3 +32,21 @@ func printYourName(name: String) {
 func maximumIntegerValue() -> Int {
     return Int.max
 }
+
+//MARK: 매개변수와 반환값이 없는 함수
+func hello() -> Void { print("hello") }
+
+func bye() { print("bye") }
+
+// MARK: - 함수의 호출
+print(sum(a: 3, b: 5)) // 8
+
+printMyName(name: "ITlearning") // ITlearning
+
+printYourName(name: "Hello") // Hello
+
+print(maximumIntegerValue()) // Int의 최댓값
+
+hello()
+
+bye()
